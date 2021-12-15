@@ -44,10 +44,13 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = Vector3.zero;
+        
         maincam = Camera.main;
         center = transform.GetChild(0).gameObject.transform;
         target = GameObject.FindGameObjectWithTag("Player").transform;
+        var camcontroll = GameObject.FindGameObjectWithTag("CamController");
+        camcontroll.SetActive(false);
+        camcontroll.SetActive(true);
     }
 
     // Update is called once per frame
@@ -75,6 +78,7 @@ public class CameraController : MonoBehaviour
     {
         //Debug.Log(target.position);
         Vector3 MoveVecter = Vector3.Slerp(transform.position, target.position, Time.deltaTime * camsettings.moceSpeed);
+        
         transform.position = MoveVecter;
     }
 
