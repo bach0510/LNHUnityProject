@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public Movement move;
-    private static bool hideCursor = true;
+    public static bool hideCursor = true;
     [System.Serializable]
     public class CamSetting
     {
@@ -104,7 +104,9 @@ public class CameraController : MonoBehaviour
     {
         if (Input.GetButton(cis.aimInput))
         {
+
             maincam.fieldOfView = Mathf.Lerp(maincam.fieldOfView, camsettings.zoomFieldOfView, camsettings.zoomSpeed * Time.deltaTime);
+
         }
         else
         {

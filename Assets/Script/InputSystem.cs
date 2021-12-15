@@ -32,7 +32,7 @@ public class InputSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetAxis(input.horizontal) != 0 || Input.GetAxis(input.vertical) != 0)
+        if (Input.GetAxis(input.horizontal) != 0 || Input.GetAxis(input.vertical) != 0 || Input.GetButton(input.aim))
         {
             rotateToCamView();
         }
@@ -48,17 +48,18 @@ public class InputSystem : MonoBehaviour
 
     void rotateToCamView()
     {
-        Vector3 camCenterPos = camCenter.position;
-        Vector3 lookPoint = camCenterPos + (camCenter.forward * lookDistance);
-        Vector3 dir = lookPoint - transform.position;
+            Vector3 camCenterPos = camCenter.position;
+            Vector3 lookPoint = camCenterPos + (camCenter.forward * lookDistance);
+            Vector3 dir = lookPoint - transform.position;
 
-        Quaternion lookRotation = Quaternion.LookRotation(dir);
+            Quaternion lookRotation = Quaternion.LookRotation(dir);
 
-        lookRotation.x = 0;
-        lookRotation.z = 0;
+            lookRotation.x = 0;
+            lookRotation.z = 0;
 
-        Quaternion final = Quaternion.Lerp(transform.rotation , lookRotation, Time.deltaTime * lookSpeed);
+            Quaternion final = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * lookSpeed);
 
-        transform.rotation = final;
+            transform.rotation = final;
+       
     }
 }
