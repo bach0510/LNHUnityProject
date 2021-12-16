@@ -1685,7 +1685,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 429ab5e2b30353041809f81b50eb52e9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 106.91
+      value: 570
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 429ab5e2b30353041809f81b50eb52e9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3182,14 +3182,14 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 0
+  DopplerLevel: 5
   MinDistance: 0
   MaxDistance: 10
   Pan2D: 0
-  rolloffMode: 2
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
+  rolloffMode: 1
+  BypassEffects: 1
+  BypassListenerEffects: 1
+  BypassReverbZones: 1
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -3266,7 +3266,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 699513674}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!1001 &699924699
 PrefabInstance:
   m_ObjectHideFlags: 0
