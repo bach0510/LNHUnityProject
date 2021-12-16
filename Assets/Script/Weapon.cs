@@ -12,7 +12,7 @@ public class Weapon : MonoBehaviour
     private AudioSource audio;
 
     //public Text currentAmmoDisplay;
-
+    public ParticleSystem muzzleFlash;
     //Animator animator;
 
     private GameObject currentGun;
@@ -44,7 +44,6 @@ public class Weapon : MonoBehaviour
         //}
         if (Input.GetButtonDown("Fire1") && Input.GetMouseButton(1))
         {
-            
             Shoot();
         }
         if (Input.GetKeyDown(KeyCode.R) )
@@ -76,6 +75,7 @@ public class Weapon : MonoBehaviour
 
         currentAmmo -= 1;
         audio.Play();
+        muzzleFlash.Play();
         RaycastHit hit;
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, 20f))
         {
