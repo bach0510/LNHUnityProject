@@ -9,6 +9,8 @@ public class Weapon : MonoBehaviour
     public Transform weaponParent;
     public Motion movementController;
 
+    private AudioSource audio;
+
     //public Text currentAmmoDisplay;
 
     //Animator animator;
@@ -27,6 +29,7 @@ public class Weapon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -39,8 +42,9 @@ public class Weapon : MonoBehaviour
         //    Aim(Input.GetMouseButton(1));
 
         //}
-        if (Input.GetButtonDown("Fire1")  )
+        if (Input.GetButtonDown("Fire1") && Input.GetMouseButton(1))
         {
+            
             Shoot();
         }
         if (Input.GetKeyDown(KeyCode.R) )
@@ -71,6 +75,7 @@ public class Weapon : MonoBehaviour
     {
 
         currentAmmo -= 1;
+        audio.Play();
         RaycastHit hit;
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, 20f))
         {
