@@ -9,6 +9,7 @@ public class ZombieAI : MonoBehaviour
 
     public NavMeshAgent navMeshAgent;
     public Healthbar healthSystem;
+    private AudioSource audio;
 
     Animator animator;
 
@@ -19,12 +20,12 @@ public class ZombieAI : MonoBehaviour
         animator = GetComponent<Animator>();
         navMeshAgent = GetComponent<NavMeshAgent>();
         healthSystem = player.transform.GetComponent<Healthbar>();
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
         navMeshAgent.SetDestination(player.transform.position);
 
         if (Vector3.Distance(transform.position, player.transform.position) < attackRange && animator.GetCurrentAnimatorStateInfo(0).IsName("Walk"))
