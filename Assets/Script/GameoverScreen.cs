@@ -6,9 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class GameoverScreen : MonoBehaviour
 {
+    public Text highScore;
     public void Setup(int score)
     {
         gameObject.SetActive(true);
+        if(ScoreSystem.scoreValue > PlayerPrefs.GetInt("HighScore", 0))
+        {
+            PlayerPrefs.SetInt("HighScore", ScoreSystem.scoreValue);
+            highScore.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
+        }
+        
+        //ScoreSystem.scoreValue = 0;
         var target = GameObject.FindGameObjectWithTag("Player");
         target.SetActive(false);
     }
