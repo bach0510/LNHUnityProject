@@ -10,7 +10,7 @@ public class LightBehaviorAuto : MonoBehaviour {
 	}
 	
 	void Update () {
-		if(Input.GetButtonDown("Fire1") && Input.GetMouseButton(1))
+		if(Input.GetButtonDown("Fire1") && Input.GetMouseButton(1) && Weapon.currentAmmo >0)
         {
 			lightSource.intensity = 2f;
 		}

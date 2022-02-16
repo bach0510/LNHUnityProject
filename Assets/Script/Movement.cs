@@ -36,7 +36,7 @@ public class Movement : MonoBehaviour
     //reload
     public void Reload(bool reload)
     {
-        if (reload) anim.SetTrigger("reload");
+        if (reload && Weapon.currentAmmo < Weapon.maxAmmo) anim.SetTrigger("reload");
     }
 
     //bắn

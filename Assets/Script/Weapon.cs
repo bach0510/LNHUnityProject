@@ -11,7 +11,7 @@ public class Weapon : MonoBehaviour
 
     private AudioSource audio;
 
-    //public Text currentAmmoDisplay;
+    public Text currentAmmoDisplay;
     public ParticleSystem muzzleFlash;
     //Animator animator;
 
@@ -19,8 +19,8 @@ public class Weapon : MonoBehaviour
     private int currentIndex;
 
 
-    private int maxAmmo;
-    private int currentAmmo;
+    public static int maxAmmo = 14;
+    public static int currentAmmo;
 
     private float sprintAdjValue;
 
@@ -42,16 +42,16 @@ public class Weapon : MonoBehaviour
         //    Aim(Input.GetMouseButton(1));
 
         //}
-        if (Input.GetButtonDown("Fire1") && Input.GetMouseButton(1))
+        if (Input.GetButtonDown("Fire1") && Input.GetMouseButton(1) && currentAmmo > 0)
         {
             Shoot();
         }
-        if (Input.GetKeyDown(KeyCode.R) )
+        if (Input.GetKeyDown(KeyCode.R) && currentAmmo < maxAmmo)
         {
             
             StartCoroutine(Reload(2));
         }
-        //currentAmmoDisplay.text = currentAmmo.ToString();
+        currentAmmoDisplay.text = currentAmmo.ToString();
     }
 
     //void Equip(int i)

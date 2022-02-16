@@ -2452,6 +2452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponParent: {fileID: 0}
   movementController: {fileID: 0}
+  currentAmmoDisplay: {fileID: 2046400158}
   muzzleFlash: {fileID: 400268384}
   cam: {fileID: 1706848618}
 --- !u!82 &455898331
