@@ -20,6 +20,7 @@ public class Target : MonoBehaviour
         health -= amount;
         if (health <= 0f)
         {
+            ScoreSystem.scoreValue += 1;
             navMeshAgent.isStopped = true;
             animator.SetTrigger("Dead");
             StartCoroutine(Death());
