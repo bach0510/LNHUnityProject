@@ -48,6 +48,7 @@ public class Weapon : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.R) )
         {
+            
             StartCoroutine(Reload(2));
         }
         //currentAmmoDisplay.text = currentAmmo.ToString();

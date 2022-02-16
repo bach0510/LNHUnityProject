@@ -39,6 +39,8 @@ public class InputSystem : MonoBehaviour
         move.CharacterMove(Input.GetAxis(input.horizontal),Input.GetAxis(input.vertical));
         move.CharacterSprint(Input.GetButton(input.sprint));
 
+        move.Reload(Input.GetKeyDown(KeyCode.R));
+
         move.CharacterAim(Input.GetButton(input.aim));
         if (Input.GetButton(input.shoot))
         {

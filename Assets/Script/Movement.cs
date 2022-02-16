@@ -33,6 +33,12 @@ public class Movement : MonoBehaviour
         anim.SetBool("aim", isAiming);
     }
 
+    //reload
+    public void Reload(bool reload)
+    {
+        if (reload) anim.SetTrigger("reload");
+    }
+
     //bắn
     public void CharacterShoot()
     {
