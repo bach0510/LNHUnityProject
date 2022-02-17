@@ -102,20 +102,23 @@ public class CameraController : MonoBehaviour
         Quaternion rotate = Quaternion.Slerp(center.transform.localRotation, Quaternion.Euler(rotatingAngle), camsettings.rotateSpeed * Time.deltaTime);
         center.transform.localRotation = rotate;
 
+        // aim assist system (cos tham khao tren mang)
+        RaycastHit hit;
+        if (Input.GetButton(cis.aimInput))
+        {
+            if (Physics.Raycast(maincam.transform.position, maincam.transform.forward, out hit, 3f))
+            {
+                Target target = hit.transform.GetComponent<Target>();
+                if (target != null)
+                {
+                    if (Physics.SphereCast(transform.position, 2f, transform.forward, out hit))
+                    {
+                        Debug.Log("Aim Assist: Hit");
+                    }
+                }
+            }
 
-        //RaycastHit hit;
-        //if (Input.GetButton(cis.aimInput))
-        //{
-        //    Target target = hit.transform.GetComponent<Target>();
-        //    if (target != null)
-        //    {
-        //        if (Physics.SphereCast(transform.position, 2f, transform.forward,  hit))
-        //        {
-        //            Debug.Log("Aim Assist: Hit");
-        //        }
-        //    }
-                
-        //}
+        }
 
     }
 
