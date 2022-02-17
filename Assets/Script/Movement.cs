@@ -45,4 +45,11 @@ public class Movement : MonoBehaviour
         anim.SetTrigger("shoot");
     }
 
+    //dao
+    public void CharacterStab()
+    {
+        anim.SetTrigger("stab");
+    }
+
+
 }

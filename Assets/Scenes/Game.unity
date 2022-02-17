@@ -5032,6 +5032,11 @@ MonoBehaviour:
   player: {fileID: 1050161898}
   gameover: {fileID: 751787110}
   isGameOver: 0
+--- !u!4 &1050161905 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 821343f7f4570b641aa529799eaf56e6, type: 3}
+  m_PrefabInstance: {fileID: 1993282580}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1063977157
 GameObject:
   m_ObjectHideFlags: 0
@@ -5131,11 +5136,6 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: b687ca93b41e3864e8ccd86645ef1adb, type: 3}
   m_PrefabInstance: {fileID: 1435265480}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1125806330 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -415919170949790895, guid: 821343f7f4570b641aa529799eaf56e6, type: 3}
-  m_PrefabInstance: {fileID: 1993282580}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1126497078
 PrefabInstance:
@@ -6691,7 +6691,7 @@ MonoBehaviour:
     mouseXAxis: Mouse X
     mouseYAxis: Mouse Y
     aimInput: Fire2
-  playerSpine: {fileID: 1125806330}
+  playerSpine: {fileID: 1050161905}
 --- !u!4 &1695246084
 Transform:
   m_ObjectHideFlags: 0

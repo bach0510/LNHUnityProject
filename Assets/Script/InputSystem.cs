@@ -42,7 +42,7 @@ public class InputSystem : MonoBehaviour
         move.Reload(Input.GetKeyDown(KeyCode.R));
 
         move.CharacterAim(Input.GetButton(input.aim));
-        if (Input.GetButton(input.shoot))
+        if (Input.GetButton(input.shoot) || Weapon.currentAmmo > 0)
         {
             move.CharacterShoot();
         }

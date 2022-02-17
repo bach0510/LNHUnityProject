@@ -48,6 +48,10 @@ public class Weapon : MonoBehaviour
         {
             Shoot();
         }
+        if ((currentAmmo == 0 && Input.GetButtonDown("Fire1")))
+        {
+            Stab();
+        }
         if ((Input.GetKeyDown(KeyCode.R) && currentAmmo < maxAmmo))
         {
             reload.Play();
@@ -73,6 +77,29 @@ public class Weapon : MonoBehaviour
     //    maxAmmo = loadout[i].ammo;
     //    currentAmmo = maxAmmo;        //currentAmmo = maxAmmo;
     //}
+
+    void Stab()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, 3f))
+        {
+            Target target = hit.transform.GetComponent<Target>();
+            if (target != null)
+            {
+                //if (hit.collider is BoxCollider)
+                //{
+                target.TakeDamage(50);
+
+                //}
+                //if (hit.collider is CapsuleCollider)
+                //{
+                //    target.TakeDamage(35 * 3f);
+                //}
+
+            }
+
+        }
+    }
 
     void Shoot()
     {
@@ -100,6 +127,7 @@ public class Weapon : MonoBehaviour
 
         }
     }
+
 
     IEnumerator Reload(float reloadTime)
     {
