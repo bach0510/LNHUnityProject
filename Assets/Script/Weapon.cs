@@ -9,7 +9,8 @@ public class Weapon : MonoBehaviour
     public Transform weaponParent;
     public Motion movementController;
 
-    private AudioSource audio;
+    public AudioSource shoot;
+    public AudioSource reload;
 
     public Text currentAmmoDisplay;
     public ParticleSystem muzzleFlash;
@@ -23,13 +24,14 @@ public class Weapon : MonoBehaviour
     public static int currentAmmo;
 
     private float sprintAdjValue;
+    private bool reloading = false;
 
 
     public Camera cam;
     // Start is called before the first frame update
     void Start()
     {
-        audio = GetComponent<AudioSource>();
+        //audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -42,13 +44,14 @@ public class Weapon : MonoBehaviour
         //    Aim(Input.GetMouseButton(1));
 
         //}
-        if (Input.GetButtonDown("Fire1") && Input.GetMouseButton(1) && currentAmmo > 0)
+        if (Input.GetButtonDown("Fire1") && Input.GetMouseButton(1) && currentAmmo > 0 && !reloading)
         {
             Shoot();
         }
-        if (Input.GetKeyDown(KeyCode.R) && currentAmmo < maxAmmo)
+        if ((Input.GetKeyDown(KeyCode.R) && currentAmmo < maxAmmo))
         {
-            
+            reload.Play();
+            reloading = true;
             StartCoroutine(Reload(2));
         }
         currentAmmoDisplay.text = currentAmmo.ToString();
@@ -75,7 +78,7 @@ public class Weapon : MonoBehaviour
     {
 
         currentAmmo -= 1;
-        audio.Play();
+        shoot.Play();
         muzzleFlash.Play();
         RaycastHit hit;
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, 20f))
@@ -103,7 +106,7 @@ public class Weapon : MonoBehaviour
 
         yield return new WaitForSeconds(reloadTime);
         currentAmmo = maxAmmo;
-
+        reloading = false;
 
     }
 }

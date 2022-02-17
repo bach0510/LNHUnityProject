@@ -39,6 +39,8 @@ public class CameraController : MonoBehaviour
     Transform center;
     Transform target;
 
+    public Transform playerSpine;
+
     float camXRotate = 0;
     float camYRotate = 0;
     // Start is called before the first frame update
@@ -80,6 +82,7 @@ public class CameraController : MonoBehaviour
         Vector3 MoveVecter = Vector3.Slerp(transform.position, target.position, Time.deltaTime * camsettings.moceSpeed);
         
         transform.position = MoveVecter;
+
     }
 
     void findPlayer()
@@ -97,8 +100,10 @@ public class CameraController : MonoBehaviour
 
         Vector3 rotatingAngle = new Vector3(-camXRotate, camYRotate, 0);
         Quaternion rotate = Quaternion.Slerp(center.transform.localRotation, Quaternion.Euler(rotatingAngle), camsettings.rotateSpeed * Time.deltaTime);
-        center.transform.localRotation = rotate;   
+        center.transform.localRotation = rotate;
+
     }
+
 
     void zoomCam()
     {
