@@ -10,8 +10,8 @@ public class CameraController : MonoBehaviour
     public class CamSetting
     {
         public float moceSpeed = 5; //tốc độ dị chuyển
-        public float mouseX_Sensivity = 5;
-        public float mouseY_Sensivity = 5;
+        public float mouseX_Sensivity = 4;
+        public float mouseY_Sensivity = 2;
         public float minClamp = -20;
         public float maxClamp = 40;
         public float rotateSpeed = 5;

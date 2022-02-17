@@ -6679,8 +6679,8 @@ MonoBehaviour:
   move: {fileID: 0}
   camsettings:
     moceSpeed: 5
-    mouseX_Sensivity: 5
-    mouseY_Sensivity: 5
+    mouseX_Sensivity: 4
+    mouseY_Sensivity: 2
     minClamp: -20
     maxClamp: 40
     rotateSpeed: 5
