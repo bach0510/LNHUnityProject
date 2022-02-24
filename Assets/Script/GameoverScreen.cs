@@ -25,6 +25,7 @@ public class GameoverScreen : MonoBehaviour
     {
         Debug.Log("Restarting");
         ScoreSystem.scoreValue = 0 ;
+        Weapon.alternativeAmmo = 98;
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -35,6 +36,7 @@ public class GameoverScreen : MonoBehaviour
     {
         Debug.Log("The Game Has Started ,Enjoy the game");
         ScoreSystem.scoreValue = 0;
+        Weapon.alternativeAmmo = 98;
         SceneManager.LoadSceneAsync("Game");
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
