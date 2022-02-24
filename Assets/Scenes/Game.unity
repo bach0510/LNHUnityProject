@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.09425417, g: 0.11950248, b: 0.1550624, a: 1}
+  m_IndirectSpecularColor: {r: 0.094257034, g: 0.11950519, b: 0.15506512, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -708,10 +708,10 @@ RectTransform:
   m_Father: {fileID: 1705303019}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -190, y: -164.54}
-  m_SizeDelta: {x: 142.9, y: 30}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -190, y: -127}
+  m_SizeDelta: {x: -641.1, y: -286}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &173056548
 MonoBehaviour:
@@ -886,10 +886,10 @@ RectTransform:
   m_Father: {fileID: 1705303019}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 115.9, y: 148.3}
-  m_SizeDelta: {x: 340.7, y: 10.2}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 115.899994, y: 140}
+  m_SizeDelta: {x: -443.3, y: -305.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &201617506
 MonoBehaviour:
@@ -1406,10 +1406,10 @@ RectTransform:
   m_Father: {fileID: 1705303019}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 194.6, y: -162.9}
-  m_SizeDelta: {x: 227.14, y: 30}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 194.1, y: -122}
+  m_SizeDelta: {x: -555.86, y: -285}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &257574377
 MonoBehaviour:
@@ -3464,10 +3464,10 @@ NavMeshAgent:
   m_GameObject: {fileID: 699513674}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.6
+  m_Radius: 0.4
   m_Speed: 0.5
   m_Acceleration: 8
-  avoidancePriority: 50
+  avoidancePriority: 40
   m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
@@ -3492,7 +3492,7 @@ MonoBehaviour:
   player: {fileID: 1050161898}
   navMeshAgent: {fileID: 699513675}
   healthSystem: {fileID: 0}
-  attackRange: 2
+  attackRange: 1
 --- !u!54 &699513677
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7371,10 +7371,10 @@ RectTransform:
   m_Father: {fileID: 1705303019}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 289, y: 158.33}
-  m_SizeDelta: {x: 73.43, y: 52.2}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 289, y: 124}
+  m_SizeDelta: {x: -710.57, y: -263.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1797895075
 MonoBehaviour:
@@ -8214,10 +8214,10 @@ RectTransform:
   m_Father: {fileID: 1705303019}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -50.6, y: -164.7}
-  m_SizeDelta: {x: 136, y: 30}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -50.600006, y: -130}
+  m_SizeDelta: {x: -648, y: -286}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2046400158
 MonoBehaviour:

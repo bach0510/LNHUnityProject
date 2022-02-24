@@ -13,7 +13,7 @@ public class ZombieAI : MonoBehaviour
 
     Animator animator;
 
-    public float attackRange = 2f;
+    public float attackRange = 1f;
     // Start is called before the first frame update
     void Awake()
     {
