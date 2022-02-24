@@ -13,6 +13,7 @@ public class Weapon : MonoBehaviour
     public AudioSource reload;
 
     public Text currentAmmoDisplay;
+    public Text alternativeAmmoDisplay;
     public ParticleSystem muzzleFlash;
     //Animator animator;
 
@@ -25,6 +26,8 @@ public class Weapon : MonoBehaviour
 
     private float sprintAdjValue;
     private bool reloading = false;
+
+    public static int alternativeAmmo = 98;
 
 
     public Camera cam;
@@ -52,13 +55,14 @@ public class Weapon : MonoBehaviour
         {
             Stab();
         }
-        if ((Input.GetKeyDown(KeyCode.R) && currentAmmo < maxAmmo))
+        if ((Input.GetKeyDown(KeyCode.R) && currentAmmo < maxAmmo && alternativeAmmo > 0))
         {
             reload.Play();
             reloading = true;
             StartCoroutine(Reload(2));
         }
         currentAmmoDisplay.text = currentAmmo.ToString();
+        alternativeAmmoDisplay.text = alternativeAmmo.ToString();
     }
 
     //void Equip(int i)
@@ -133,7 +137,17 @@ public class Weapon : MonoBehaviour
     {
 
         yield return new WaitForSeconds(reloadTime);
-        currentAmmo = maxAmmo;
+        if (alternativeAmmo > (maxAmmo - currentAmmo))
+        {
+            alternativeAmmo -= (maxAmmo - currentAmmo);// neu con dan du tru se nap lai va tru di so luong nap vao so dan du tru
+            currentAmmo = maxAmmo;
+        }
+        else
+        {
+            currentAmmo += (alternativeAmmo);
+            alternativeAmmo = 0;
+        }
+        
         reloading = false;
 
     }

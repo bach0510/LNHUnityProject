@@ -102,7 +102,7 @@ public class CameraController : MonoBehaviour
         Quaternion rotate = Quaternion.Slerp(center.transform.localRotation, Quaternion.Euler(rotatingAngle), camsettings.rotateSpeed * Time.deltaTime);
         center.transform.localRotation = rotate;
 
-        // aim assist system (cos tham khao tren mang)
+        // aim assist system (co tham khao tren mang)
         RaycastHit hit;
         if (Input.GetButton(cis.aimInput))
         {
