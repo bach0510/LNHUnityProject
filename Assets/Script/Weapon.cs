@@ -117,15 +117,16 @@ public class Weapon : MonoBehaviour
             Target target = hit.transform.GetComponent<Target>();
             if (target != null)
             {
-                //if (hit.collider is BoxCollider)
-                //{
+                Debug.Log(hit.collider);
+                if (hit.collider is BoxCollider)
+                {
                     target.TakeDamage(35);
-                    
-                //}
-                //if (hit.collider is CapsuleCollider)
-                //{
-                //    target.TakeDamage(35 * 3f);
-                //}
+
+                }
+                if (hit.collider is CapsuleCollider)
+                {
+                    target.TakeDamage(35 * 3f);
+                }
 
             }
 

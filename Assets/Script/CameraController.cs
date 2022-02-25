@@ -113,7 +113,7 @@ public class CameraController : MonoBehaviour
                 {
                     if (Physics.SphereCast(transform.position, 2f, transform.forward, out hit))
                     {
-                        Debug.Log("Aim Assist: Hit");
+                        //Debug.Log("Aim Assist: Hit");
                     }
                 }
             }
