@@ -41,8 +41,11 @@ public class Spawner : MonoBehaviour
     //Update is called once per frame
     void Update()
     {
-        GameObject[] enemy;
-        enemy = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject[] prefabs;
+        prefabs = GameObject.FindGameObjectsWithTag("Enemy");
+
+        if (prefabToSpawn.gameObject.tag == "Enemy") prefabs = GameObject.FindGameObjectsWithTag("Enemy");
+        if(prefabToSpawn.gameObject.tag == "Ammo") prefabs = GameObject.FindGameObjectsWithTag("Ammo");
         //var position = new Vector3(player.transform.position.x + Random.Range(-30.0f, -15.0f), player.transform.position.y, player.transform.position.z + Random.Range(-30.0f, -15.0f));
         spawnTimer -= Time.deltaTime;
         if (spawnTimer <= 0.0f )
@@ -52,7 +55,7 @@ public class Spawner : MonoBehaviour
             float posy;
             for (int i = 1; i <= 4; i++)
             {
-                if(i == 1 && enemy.Length < numberOfEnemy)
+                if(i == 1 && prefabs.Length < numberOfEnemy)
                 {
                     // generate random x position
                      posx = Random.Range(player.transform.position.x + minSpawn, player.transform.position.x + maxSpawn);
@@ -63,7 +66,7 @@ public class Spawner : MonoBehaviour
                     // create new gameObject on random position
                     Instantiate(prefabToSpawn, new Vector3(posx, posy, posz), Quaternion.identity);
                 }
-                if (i == 2 && enemy.Length < numberOfEnemy)
+                if (i == 2 && prefabs.Length < numberOfEnemy)
                 {
                     // generate random x position
                      posx = Random.Range(player.transform.position.x - minSpawn, player.transform.position.x - maxSpawn);
@@ -74,7 +77,7 @@ public class Spawner : MonoBehaviour
                     // create new gameObject on random position
                     Instantiate(prefabToSpawn, new Vector3(posx, posy , posz), Quaternion.identity);
                 }
-                if (i == 3 && enemy.Length < numberOfEnemy)
+                if (i == 3 && prefabs.Length < numberOfEnemy)
                 {
                     // generate random x position
                      posx = Random.Range(player.transform.position.x - minSpawn, player.transform.position.x - maxSpawn);
@@ -85,7 +88,7 @@ public class Spawner : MonoBehaviour
                     // create new gameObject on random position
                     Instantiate(prefabToSpawn, new Vector3(posx, posy , posz), Quaternion.identity);
                 }
-                if (i == 4 && enemy.Length < numberOfEnemy)
+                if (i == 4 && prefabs.Length < numberOfEnemy)
                 {
                     // generate random x position
                      posx = Random.Range(player.transform.position.x + minSpawn, player.transform.position.x + maxSpawn);
