@@ -72,7 +72,7 @@ public class Spawner : MonoBehaviour
                     // get the terrain height at the random position
                      posy = Terrain.activeTerrain.SampleHeight(new Vector3(posx, 0, posz));
                     // create new gameObject on random position
-                    Instantiate(prefabToSpawn, new Vector3(posx, posy + 1f, posz), Quaternion.identity);
+                    Instantiate(prefabToSpawn, new Vector3(posx, posy , posz), Quaternion.identity);
                 }
                 if (i == 3 && enemy.Length < numberOfEnemy)
                 {
@@ -83,7 +83,7 @@ public class Spawner : MonoBehaviour
                     // get the terrain height at the random position
                      posy = Terrain.activeTerrain.SampleHeight(new Vector3(posx, 0, posz));
                     // create new gameObject on random position
-                    Instantiate(prefabToSpawn, new Vector3(posx, posy + 1f, posz), Quaternion.identity);
+                    Instantiate(prefabToSpawn, new Vector3(posx, posy , posz), Quaternion.identity);
                 }
                 if (i == 4 && enemy.Length < numberOfEnemy)
                 {
@@ -94,7 +94,7 @@ public class Spawner : MonoBehaviour
                     // get the terrain height at the random position
                      posy = Terrain.activeTerrain.SampleHeight(new Vector3(posx, 0, posz));
                     // create new gameObject on random position
-                    Instantiate(prefabToSpawn, new Vector3(posx, posy + 1f, posz), Quaternion.identity);
+                    Instantiate(prefabToSpawn, new Vector3(posx, posy , posz), Quaternion.identity);
                 }
             }
             
