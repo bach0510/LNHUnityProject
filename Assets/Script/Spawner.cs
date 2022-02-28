@@ -42,10 +42,7 @@ public class Spawner : MonoBehaviour
     void Update()
     {
         GameObject[] prefabs;
-        prefabs = GameObject.FindGameObjectsWithTag("Enemy");
-
-        if (prefabToSpawn.gameObject.tag == "Enemy") prefabs = GameObject.FindGameObjectsWithTag("Enemy");
-        if(prefabToSpawn.gameObject.tag == "Ammo") prefabs = GameObject.FindGameObjectsWithTag("Ammo");
+        prefabs = GameObject.FindGameObjectsWithTag(prefabToSpawn.gameObject.tag);
         //var position = new Vector3(player.transform.position.x + Random.Range(-30.0f, -15.0f), player.transform.position.y, player.transform.position.z + Random.Range(-30.0f, -15.0f));
         spawnTimer -= Time.deltaTime;
         if (spawnTimer <= 0.0f )
