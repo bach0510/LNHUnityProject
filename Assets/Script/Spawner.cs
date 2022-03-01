@@ -1,4 +1,4 @@
-
+﻿
 using UnityEngine;
 using System.Collections;
 
@@ -16,8 +16,9 @@ public class Spawner : MonoBehaviour
     public float spawnTime;
     public float spawnTimeRandom;
 
-    public float minSpawn;
-    public float maxSpawn;
+    public float minSpawn;//khoảng cách nhỏ nhất cách người chơi
+    public float maxSpawn;// khoảng cách dài nhất cách người chơi 
+    // object sẽ được spawn trong khoảng từ minSpawn  đến maxSpawn
 
     public int numberOfEnemy;
 
@@ -25,6 +26,7 @@ public class Spawner : MonoBehaviour
 
     void Start()
     {
+        // gán các giá trị max của terrain
         // terrain size x
         terrainWidth = (int)terrain.terrainData.size.x;
         // terrain size z
@@ -42,17 +44,18 @@ public class Spawner : MonoBehaviour
     void Update()
     {
         GameObject[] prefabs;
-        prefabs = GameObject.FindGameObjectsWithTag(prefabToSpawn.gameObject.tag);
+        prefabs = GameObject.FindGameObjectsWithTag(prefabToSpawn.gameObject.tag);// tìm số lượng object đã đc spawn trong map 
         //var position = new Vector3(player.transform.position.x + Random.Range(-30.0f, -15.0f), player.transform.position.y, player.transform.position.z + Random.Range(-30.0f, -15.0f));
         spawnTimer -= Time.deltaTime;
-        if (spawnTimer <= 0.0f )
+        if (spawnTimer <= 0.0f )// nếu hết thời gian đếm nguoiwcj 
         {
             float posx;
             float posz;
             float posy;
-            for (int i = 1; i <= 4; i++)
+            for (int i = 1; i <= 4; i++)// vọng lặp spawn xung quanh 4 góc của người chơi
             {
-                if(i == 1 && prefabs.Length < numberOfEnemy)
+                // 4 câu if ở dưới : nếu số lượng object trên map nhỏ hơn số object tối đa cần spawn thì spawn object ở 4 góc
+                if(i == 1 && prefabs.Length < numberOfEnemy) 
                 {
                     // generate random x position
                      posx = Random.Range(player.transform.position.x + minSpawn, player.transform.position.x + maxSpawn);
@@ -110,7 +113,7 @@ public class Spawner : MonoBehaviour
     }
 
     //Resets the spawn timer with a random offset
-    void ResetSpawnTimer()
+    void ResetSpawnTimer()// reset lại thời gian spawn object
     {
         spawnTimer = (float)(spawnTime + Random.Range(0, spawnTimeRandom * 100) / 100.0);
     }
