@@ -521,7 +521,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press F to refill ammo
+  m_Text: Press F to take the ammo
 --- !u!222 &39304325
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5690,7 +5690,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &751787107
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5813,7 +5813,6 @@ GameObject:
   - component: {fileID: 789079983}
   - component: {fileID: 789079986}
   - component: {fileID: 789079985}
-  - component: {fileID: 789079984}
   m_Layer: 5
   m_Name: HighScore
   m_TagString: Untagged
@@ -5840,18 +5839,6 @@ RectTransform:
   m_AnchoredPosition: {x: 2.56, y: 9}
   m_SizeDelta: {x: 227.14, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &789079984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 789079982}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81b52fa3007a7634e93bb582c752c38a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &789079985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10709,8 +10696,12 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 435656, guid: db0b937196d74ad4aa023bb021609908, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.015
+      objectReference: {fileID: 0}
+    - target: {fileID: 435656, guid: db0b937196d74ad4aa023bb021609908, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 435656, guid: db0b937196d74ad4aa023bb021609908, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10866,7 +10857,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 491050, guid: db0b937196d74ad4aa023bb021609908, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.118
+      value: 0.129
       objectReference: {fileID: 0}
     - target: {fileID: 491050, guid: db0b937196d74ad4aa023bb021609908, type: 3}
       propertyPath: m_LocalPosition.y
