@@ -46,10 +46,10 @@ public class Movement : MonoBehaviour
     }
 
     //dao
-    //public void CharacterStab()
-    //{
-    //    anim.SetTrigger("stab");
-    //}
+    public void CharacterStab()
+    {
+        anim.SetTrigger("stab");
+    }
 
 
 }

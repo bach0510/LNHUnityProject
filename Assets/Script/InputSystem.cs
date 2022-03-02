@@ -47,6 +47,10 @@ public class InputSystem : MonoBehaviour
         {
             move.CharacterShoot();
         }
+        if (Input.GetButton(input.shoot) && !Input.GetButton(input.aim))// nếu nhấn bắn khi không ngắm sẽ trigger animation đấm
+        {
+            move.CharacterStab();
+        }
     }
 
     void rotateToCamView()// hàm xoay nhân vật theo hướng camera

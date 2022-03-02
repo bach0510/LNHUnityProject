@@ -11,6 +11,7 @@ public class Weapon : MonoBehaviour
 
     public AudioSource shoot;
     public AudioSource reload;
+    public AudioSource punch;
 
     public Text currentAmmoDisplay;
     public Text alternativeAmmoDisplay;
@@ -44,7 +45,7 @@ public class Weapon : MonoBehaviour
         {
             Shoot(); // hàm bắn 
         }
-        if ((currentAmmo == 0 && Input.GetButtonDown("Fire1")))
+        if (( Input.GetButtonDown("Fire1") && !reloading && !Input.GetMouseButton(1)))
         {
             Stab();
         }
@@ -78,20 +79,14 @@ public class Weapon : MonoBehaviour
     void Stab()// hàm đâm dao zombie (giống hàm bắn nhưng khoảng cách gay dame bây h sẽ chỉ là 3)
     {
         RaycastHit hit;
+        punch.Play();
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, 3f))
         {
             Target target = hit.transform.GetComponent<Target>();
             if (target != null)
             {
-                //if (hit.collider is BoxCollider)
-                //{
+                Debug.Log("Punch hit");
                 target.TakeDamage(50);
-
-                //}
-                //if (hit.collider is CapsuleCollider)
-                //{
-                //    target.TakeDamage(35 * 3f);
-                //}
 
             }
 
