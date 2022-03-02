@@ -1897,7 +1897,7 @@ MonoBehaviour:
   spawnTimeRandom: 1
   minSpawn: 15
   maxSpawn: 50
-  numberOfEnemy: 30
+  maxNumberToSpawn: 50
 --- !u!114 &248575061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1917,7 +1917,7 @@ MonoBehaviour:
   spawnTimeRandom: 1
   minSpawn: 15
   maxSpawn: 40
-  numberOfEnemy: 4
+  maxNumberToSpawn: 4
 --- !u!1001 &251973265
 PrefabInstance:
   m_ObjectHideFlags: 0

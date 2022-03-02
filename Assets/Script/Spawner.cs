@@ -20,7 +20,7 @@ public class Spawner : MonoBehaviour
     public float maxSpawn;// khoảng cách dài nhất cách người chơi 
     // object sẽ được spawn trong khoảng từ minSpawn  đến maxSpawn
 
-    public int numberOfEnemy;
+    public int maxNumberToSpawn;// số object tối đa để spawn xung quanh player
 
     private float spawnTimer;
 
@@ -55,7 +55,7 @@ public class Spawner : MonoBehaviour
             for (int i = 1; i <= 4; i++)// vọng lặp spawn xung quanh 4 góc của người chơi
             {
                 // 4 câu if ở dưới : nếu số lượng object trên map nhỏ hơn số object tối đa cần spawn thì spawn object ở 4 góc
-                if(i == 1 && prefabs.Length < numberOfEnemy) 
+                if(i == 1 && prefabs.Length < maxNumberToSpawn) 
                 {
                     // generate random x position
                      posx = Random.Range(player.transform.position.x + minSpawn, player.transform.position.x + maxSpawn);
@@ -66,7 +66,7 @@ public class Spawner : MonoBehaviour
                     // create new gameObject on random position
                     Instantiate(prefabToSpawn, new Vector3(posx, posy, posz), Quaternion.identity);
                 }
-                if (i == 2 && prefabs.Length < numberOfEnemy)
+                if (i == 2 && prefabs.Length < maxNumberToSpawn)
                 {
                     // generate random x position
                      posx = Random.Range(player.transform.position.x - minSpawn, player.transform.position.x - maxSpawn);
@@ -77,7 +77,7 @@ public class Spawner : MonoBehaviour
                     // create new gameObject on random position
                     Instantiate(prefabToSpawn, new Vector3(posx, posy , posz), Quaternion.identity);
                 }
-                if (i == 3 && prefabs.Length < numberOfEnemy)
+                if (i == 3 && prefabs.Length < maxNumberToSpawn)
                 {
                     // generate random x position
                      posx = Random.Range(player.transform.position.x - minSpawn, player.transform.position.x - maxSpawn);
@@ -88,7 +88,7 @@ public class Spawner : MonoBehaviour
                     // create new gameObject on random position
                     Instantiate(prefabToSpawn, new Vector3(posx, posy , posz), Quaternion.identity);
                 }
-                if (i == 4 && prefabs.Length < numberOfEnemy)
+                if (i == 4 && prefabs.Length < maxNumberToSpawn)
                 {
                     // generate random x position
                      posx = Random.Range(player.transform.position.x + minSpawn, player.transform.position.x + maxSpawn);
