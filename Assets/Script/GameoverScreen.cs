@@ -7,6 +7,11 @@ using UnityEngine.SceneManagement;
 public class GameoverScreen : MonoBehaviour
 {
     public Text highScore;// điểm cao
+
+    public void Update()
+    {
+        highScore.text = "HighScore: " + PlayerPrefs.GetInt("HighScore").ToString();// set text điểm cao
+    }
     public void Setup(int score) // set up
     {
         gameObject.SetActive(true);// game object là màn hình lúc người chơi bị hết thanh máu
