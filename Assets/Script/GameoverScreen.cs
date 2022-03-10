@@ -7,10 +7,12 @@ using UnityEngine.SceneManagement;
 public class GameoverScreen : MonoBehaviour
 {
     public Text highScore;// điểm cao
+    public Text graphic;
 
     public void Update()
     {
         highScore.text = "HighScore: " + PlayerPrefs.GetInt("HighScore").ToString();// set text điểm cao
+        graphic.text = PlayerPrefs.GetInt("Graphic") == 0 ? "Low Graphic" : PlayerPrefs.GetInt("Graphic") == 2 ? "Medium Graphic" : "High Graphic";
     }
     public void Setup(int score) // set up
     {
@@ -56,5 +58,11 @@ public class GameoverScreen : MonoBehaviour
         // load scene menu
         SceneManager.LoadSceneAsync("MainMenu");
 
+    }
+
+    public void SetGraphic(int level)// nút thay đổi đồ họa 
+    {
+        QualitySettings.SetQualityLevel(level);
+        PlayerPrefs.SetInt("Graphic", level);
     }
 }

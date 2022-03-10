@@ -8,6 +8,7 @@ TagManager:
   - CamController
   - ShootSmoke
   - Ammo
+  - Graphic
   layers:
   - Default
   - TransparentFX
