@@ -11,8 +11,8 @@ public class GameoverScreen : MonoBehaviour
 
     public void Update()
     {
-        highScore.text = "HighScore: " + PlayerPrefs.GetInt("HighScore").ToString();// set text điểm cao
-        graphic.text = PlayerPrefs.GetInt("Graphic") == 0 ? "Low Graphic" : PlayerPrefs.GetInt("Graphic") == 2 ? "Medium Graphic" : "High Graphic";
+        if(highScore != null) highScore.text = "HighScore: " + PlayerPrefs.GetInt("HighScore").ToString();// set text điểm cao
+        if(graphic != null) graphic.text = PlayerPrefs.GetInt("Graphic") == 0 ? "Low Graphic" : PlayerPrefs.GetInt("Graphic") == 2 ? "Medium Graphic" : "High Graphic";// set graphic
     }
     public void Setup(int score) // set up
     {
@@ -64,5 +64,10 @@ public class GameoverScreen : MonoBehaviour
     {
         QualitySettings.SetQualityLevel(level);
         PlayerPrefs.SetInt("Graphic", level);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();// thoat game
     }
 }
